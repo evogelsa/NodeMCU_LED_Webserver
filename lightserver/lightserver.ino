@@ -1,4 +1,4 @@
-/* 
+/*
 https://lastminuteengineers.com/creating-esp8266-web-server-arduino-ide/
 */
 #include <ESP8266WiFi.h>
@@ -29,7 +29,7 @@ const char *password = "YourPassword"; //at least 8 chars long
 /* setup ip */
 IPAddress local_ip(192,168,1,1);
 IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0); 
+IPAddress subnet(255,255,255,0);
 
 /* init webserver */
 ESP8266WebServer server(80);
@@ -167,9 +167,9 @@ void FillLEDsFromPaletteColors( uint8_t colorIndex)
 {
    uint8_t brightness = 255;
 
-   for( int i = 0; i < NUM_LEDS; i++) 
+   for( int i = 0; i < NUM_LEDS; i++)
    {
-      leds[i] = ColorFromPalette(currentPalette, colorIndex, brightness, 
+      leds[i] = ColorFromPalette(currentPalette, colorIndex, brightness,
             currentBlending);
       colorIndex += 3;
    }
@@ -180,7 +180,7 @@ void loop()
 {
    /* handle any incoming http request */
    server.handleClient();
-   
+
    Serial.print("Mode = ");
    Serial.println(lightMode);
 
